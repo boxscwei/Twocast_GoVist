@@ -1,4 +1,4 @@
-# 🎙️ Twocast - AI Podcast Generator
+# 🎙️ Twocast - AI Podcast Generator - Two-person Podcast
 [中文手册](./README.zh-CN.md) | 🌐 Website: [Twocast.app](https://twocast.app/)
 
 ![Screenshot](./public/assets/img/image.png)
@@ -11,6 +11,7 @@
 
 ## ✨ Key Features
 
+- 👥 Two-person Podcast
 - ⏱️ Generate 3-5 minute podcasts with one click
 - 🧠 Supports multiple generation methods: **Topic**, **Link**, **Document** (doc/pdf/txt), **List Page** (5-9 minutes)
 - 🌍 Multi-language support
