@@ -21,8 +21,8 @@
 ## 🎧 Sample Podcasts
 
 - 🇺🇸 English: [Hacker News Hot Articles](https://twocast.app/podcast/vs962a7f-9461-4875-b7c7-2f5aca66126e)
-- 🇨🇳 Chinese: [Hacker News Hot List](https://twocast.app/podcast/vs789e71-b192-4374-93a2-8177f457ba5c)
-- 🇨🇳 Chinese: [V2EX Hot List](https://twocast.app/podcast/vsbed589-6493-4ac2-8217-64d82b1ecafa)
+- 🇨🇳 中文: [Hacker News 热榜](https://twocast.app/podcast/vs789e71-b192-4374-93a2-8177f457ba5c)
+- 🇨🇳 中文: [V2EX 热榜](https://twocast.app/podcast/vsbed589-6493-4ac2-8217-64d82b1ecafa)
 
 ---
 
