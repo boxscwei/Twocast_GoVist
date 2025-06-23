@@ -3,6 +3,10 @@
 
 🌐 Website: [Twocast.app](https://twocast.app/)
 
+## Community
+- [Discord](https://discord.gg/VJREVF9Ja3)
+- [Telegram](https://t.me/+FYXV9IAVqcY5MTYx)
+
 ![Screenshot](./public/assets/img/image.png)
 
 ---
