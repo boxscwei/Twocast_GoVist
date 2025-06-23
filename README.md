@@ -1,7 +1,5 @@
 # 🎙️ Twocast - AI Podcast Generator
-[中文手册](./README.zh-CN.md)
-
-🌐 Website: [Twocast.app](https://twocast.app/)
+[中文手册](./README.zh-CN.md) | 🌐 Website: [Twocast.app](https://twocast.app/)
 
 ![Screenshot](./public/assets/img/image.png)
 
