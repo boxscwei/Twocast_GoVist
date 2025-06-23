@@ -1,70 +1,96 @@
-# Twocast - AI播客生成器
+# 🎙️ Twocast - AI Podcast Generator
+[中文手册](./README.zh-CN.md)
 
-## 特性
-- 可生成3~5分钟播客
-- 根据主题生成
-- 根据链接生成
-- 根据 doc, pdf, txt 等文档生成
-- 根据列表页，生成 5~9 分钟播客
-- 支持多语言
-- 可下载
-- 播客内容包括音频、大纲、脚本
-- 支持3大平台 Fish Audio, Minimax, Google Gemini
+🌐 Website: [Twocast.app](https://twocast.app/)
 
-## 方法一：本地启动
+![Screenshot](./public/assets/img/image.png)
 
-### 启动依赖服务
-```
-docker run -t -d --restart always -p 8080:8080 -e PORT=8080 --name textract bespaloff/textract-rest-api:v4.0.2
-docker run -d --restart always --name ffmpeg-api -p 8081:3000 kazhar/ffmpeg-api
-```
+---
 
-### 配置环境
-```
-cp .env.example .env
-```
+## ✨ Key Features
 
-详细内容参考 [.env配置](#env配置)
+- ⏱️ Generate 3-5 minute podcasts with one click
+- 🧠 Supports multiple generation methods: **Topic**, **Link**, **Document** (doc/pdf/txt), **List Page** (5-9 minutes)
+- 🌍 Multi-language support
+- ⬇️ Downloadable audio
+- 📋 Podcast content includes: **Audio, Outline, Script**
+- 🔌 Supports three major platforms: **Fish Audio**, **Minimax**, **Google Gemini**
 
-### 启动 postgres
-- 创建数据库 twocast
-- 修改 .env 配置 `DATABASE_URL=`
-- 运行 `npx drizzle-kit push` 初始化数据库
+---
 
-### 启动
-```
-yarn && yarn start
-```
+## 🎧 Sample Podcasts
 
-## 方法二：从 Docker 启动（可能出错）
+- 🇺🇸 English: [Hacker News Hot Articles](https://twocast.app/podcast/vs962a7f-9461-4875-b7c7-2f5aca66126e)
+- 🇨🇳 Chinese: [Hacker News Hot List](https://twocast.app/podcast/vs789e71-b192-4374-93a2-8177f457ba5c)
+- 🇨🇳 Chinese: [V2EX Hot List](https://twocast.app/podcast/vsbed589-6493-4ac2-8217-64d82b1ecafa)
 
-### 配置环境
-```
-cp .env.docker .env
-```
+---
 
-详细内容参考 [.env配置](#env配置)
+## 🚀 Quick Start
 
-### 启动
-```
-docker compose up
-```
+### Method 1: Local Setup
 
+1.  **Start dependency services**
+    ```bash
+    docker run -t -d --restart always -p 8080:8080 -e PORT=8080 --name textract bespaloff/textract-rest-api:v4.0.2
+    docker run -d --restart always --name ffmpeg-api -p 8081:3000 kazhar/ffmpeg-api
+    ```
+2.  **Configure environment variables**
+    ```bash
+    cp .env.example .env
+    ```
+    See [Environment Variable Configuration](#environment-variable-configuration) for details.
+3.  **Start Postgres database**
+    -   Create a database `twocast`
+    -   Modify `DATABASE_URL` in the `.env` file
+    -   Initialize the database:
+        ```bash
+        npx drizzle-kit push
+        ```
+4.  **Start the project**
+    ```bash
+    yarn && yarn start
+    ```
 
-## .env配置
+---
 
-### 在 .env 配置 TTS API
+### Method 2: Docker One-Click Start
 
-- [Fish Audio](https://bit.ly/4k7AXHt)
-  - 进入 [Fish Audio](https://bit.ly/4k7AXHt) 拿到 api-key 并填入 `FISH_AUDIO_TOKEN=`
-- Minimax (非必须)
-  - 进入 [Profile](https://www.minimax.io/platform/user-center/basic-information) 拿到 GroupID 并填入 `MINIMAX_GROUP_ID=`
-  - 进入 [API keys](https://www.minimax.io/platform/user-center/basic-information/interface-key) 拿到 api-key 并填入 `MINIMAX_TOKEN=`
-  - 设置 `MINIMAX_ENABLED=1`
-- Google Gemini (非必须，很贵)
-  - 进入 [Google AI Studio](https://aistudio.google.com/gen-media) 拿到 api-key 并填入 `GEMINI_TOKEN=`
-  - 设置 `GEMINI_ENABLED=1`
+> ⚠️ If you encounter any issues, please prioritize using the "Local Setup" method.
 
-### 在 .env 配置 LLM API
-- Chat: 进入 https://openrouter.ai 拿到 api-key 并填入 `LLM_API_KEY=`
-- Search: 进入 https://console.x.ai/ 拿到 api-key 并填入 `LLM_SEARCH_API_KEY=`
+1.  **Configure environment variables**
+    ```bash
+    cp .env.docker .env
+    ```
+    See [Environment Variable Configuration](#environment-variable-configuration) for details.
+2.  **Start**
+    ```bash
+    docker compose up
+    ```
+
+---
+
+## Environment Variable Configuration
+
+### 🔊 TTS API Configuration
+
+-   🎏 **Fish Audio**  
+    Register and get an API Key: [Fish Audio](https://bit.ly/4k7AXHt), and enter it in `FISH_AUDIO_TOKEN=`
+-   🦾 **Minimax** (Optional)  
+    Get GroupID from [Profile](https://www.minimax.io/platform/user-center/basic-information), and enter it in `MINIMAX_GROUP_ID=`  
+    Get API Key from [API keys](https://www.minimax.io/platform/user-center/basic-information/interface-key), and enter it in `MINIMAX_TOKEN=`  
+    Enable: `MINIMAX_ENABLED=1`
+-   🌈 **Google Gemini** (Optional, more expensive)  
+    Get API Key from [Google AI Studio](https://aistudio.google.com/gen-media), and enter it in `GEMINI_TOKEN=`  
+    Enable: `GEMINI_ENABLED=1`
+
+### 🤖 LLM API Configuration
+
+-   💬 **Chat**: Get API Key from [OpenRouter](https://openrouter.ai), and enter it in `LLM_API_KEY=`
+-   🔍 **Search**: Get API Key from [x.ai](https://console.x.ai/), and enter it in `LLM_SEARCH_API_KEY=`
+
+---
+
+## 🙏 Acknowledgements
+
+-   [tailwind-nextjs-starter-blog-i18n](https://github.com/PxlSyl/tailwind-nextjs-starter-blog-i18n)
