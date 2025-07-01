@@ -53,13 +53,17 @@ export async function processAudioTask(task: Task) {
     audioResult = { audio: Buffer.from([]), format: 'mp3' }
   } else {
     console.log(`[${currentStep}:processTask] generate audio, platform=${userInputs.platform}, voice_id_1=${userInputs.voice_id_1}, voice_id_2=${userInputs.voice_id_2}`)
-    switch (userInputs.platform) {
+    let platform = userInputs.platform
+    if (userInputs.platform === Platform.FishAudio + '_custom') {
+      platform = Platform.FishAudio
+    }
+    switch (platform) {
       case Platform.Gemini:
         audioResult = await genWhole(result.script, userInputs.voice_id_1!, userInputs.voice_id_2!)
         break
       case Platform.Minimax:
         audioResult = await genParts({
-          concurrency: getPlatformConcurrencies()[userInputs.platform],
+          concurrency: getPlatformConcurrencies()[platform],
           items: result.script,
           genFn: genVoiceMinimax,
           voiceOption_1: { id: userInputs.voice_id_1! },
@@ -68,7 +72,7 @@ export async function processAudioTask(task: Task) {
         break
       case Platform.FishAudio:
         audioResult = await genParts({
-          concurrency: getPlatformConcurrencies()[userInputs.platform],
+          concurrency: getPlatformConcurrencies()[platform],
           items: result.script,
           genFn: genVoiceFishAudio,
           voiceOption_1: { id: userInputs.voice_id_1! },
