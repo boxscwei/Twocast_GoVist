@@ -1,3 +1,7 @@
+源项目地址：https://github.com/panyanyany/Twocast
+本项目fork出来之后修改部分采用MIT许可协议。
+
+
 # 🎙️ Twocast - AI Podcast Generator - Two-person Podcast
 [中文手册](./README.zh-CN.md) | 🌐 Website: [Twocast.app](https://twocast.app/)
 
